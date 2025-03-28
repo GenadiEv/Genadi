@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моят Поетичен Сайт</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        .content {
+            padding: 20px;
+        }
+        .poem {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .archive {
+            margin-top: 40px;
+        }
+        .archive h2 {
+            font-size: 1.5em;
+        }
+        .archive ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .archive li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Добре дошли на моя поетичен сайт!</h1>
+        <p>Тук ще публикувам всяко ново стихотворение, което пиша всеки ден.</p>
+    </header>
+
+    <div class="content">
+        <section class="poem">
+            <h2>Последно стихотворение:</h2>
+            <p id="latest-poem">Това е примерното стихотворение. Променете го с новото стихотворение от вашия Facebook или друга платформа.</p>
+        </section>
+
+        <section class="archive">
+            <h2>Архив:</h2>
+            <ul id="poem-archive">
+                <li>Стихотворение 1</li>
+                <li>Стихотворение 2</li>
+                <li>Стихотворение 3</li>
+            </ul>
+        </section>
+    </div>
+    
+    <script>
+        // Примерен JavaScript за добавяне на ново стихотворение (може да се свърже с Facebook API или друга база данни за автоматично зареждане).
+        // Това е основен пример, който може да се разшири с динамично обновяване.
+
+        const latestPoemElement = document.getElementById('latest-poem');
+        const poemArchiveElement = document.getElementById('poem-archive');
+
+        // Примерен масив със стихотворения
+        const poems = [
+            'Стихотворение 1 - Текст на първото стихотворение.',
+            'Стихотворение 2 - Текст на второто стихотворение.',
+            'Стихотворение 3 - Текст на третото стихотворение.'
+        ];
+
+        // Показване на последното стихотворение
+        latestPoemElement.textContent = poems[poems.length - 1];
+
+        // Попълване на архива със стихотворения
+        poems.forEach(poem => {
+            const listItem = document.createElement('li');
+            listItem.textContent = poem;
+            poemArchiveElement.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
